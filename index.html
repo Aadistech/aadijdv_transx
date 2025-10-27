@@ -1,1 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TransX — Client Login</title>
+  <!-- Tailwind CDN for quick styling in a single file -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Tiny custom shadow/logo circle */
+    .brand-circle{background:linear-gradient(135deg,#4f46e5,#06b6d4);width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+  <main class="w-full max-w-md p-6">
+    <section class="bg-white rounded-2xl shadow-lg p-8">
+      <header class="flex items-center gap-4 mb-6">
+        <img src="C:\transx\transx logo.jpg" alt="TransX Logo" class="w-14 h-14 object-contain" />
+        <div>
+          <h1 class="text-2xl font-semibold leading-tight">TransX</h1>
+          <p class="text-sm text-gray-500">Client Portal — Sign in</p>
+        </div>
+      </header>
+
+      <form id="loginForm" class="space-y-4" novalidate>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@company.com" class="mt-1 block w-full rounded-md border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3" />
+          <p id="emailError" class="mt-1 text-xs text-red-600 hidden">Please enter a valid email.</p>
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <div class="relative mt-1">
+            <input type="password" id="password" name="password" required minlength="6" placeholder="Enter your password" class="block w-full rounded-md border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 pr-12" />
+            <button type="button" id="togglePwd" aria-label="Show password" class="absolute right-2 top-2 text-sm text-gray-500">Show</button>
+          </div>
+          <p id="pwdError" class="mt-1 text-xs text-red-600 hidden">Password must be at least 6 characters.</p>
+        </div>
+
+        <div class="flex items-center justify-between text-sm">
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" id="remember" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" />
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="text-indigo-600 hover:underline">Forgot password?</a>
+        </div>
+
+        <div>
+          <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-indigo-600 text-white p-3 rounded-md font-medium shadow">Sign in</button>
+        </div>
+
+        <div class="text-center text-sm text-gray-500">or continue with</div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <button type="button" class="w-full p-2 border rounded-md flex items-center justify-center gap-2">Google</button>
+          <button type="button" class="w-full p-2 border rounded-md flex items-center justify-center gap-2">GitHub</button>
+        </div>
+      </form>
+
+      <p class="text-center text-sm text-gray-500 mt-4">New to TransX? <a href="#" class="text-indigo-600 hover:underline">Create an account</a></p>
+    </section>
+
+    <footer class="mt-4 text-center text-xs text-gray-400">© TransX — All rights reserved.</footer>
+  </main>
+
+  <script>
+    // Simple client-side validation and UI behavior
+    const form = document.getElementById('loginForm');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const emailError = document.getElementById('emailError');
+    const pwdError = document.getElementById('pwdError');
+    const toggle = document.getElementById('togglePwd');
+
+    toggle.addEventListener('click', () => {
+      if (password.type === 'password') {
+        password.type = 'text';
+        toggle.textContent = 'Hide';
+      } else {
+        password.type = 'password';
+        toggle.textContent = 'Show';
+      }
+    });
+
+    function validateEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let ok = true;
+
+      if (!validateEmail(email.value.trim())) {
+        emailError.classList.remove('hidden');
+        ok = false;
+      } else {
+        emailError.classList.add('hidden');
+      }
+
+      if (password.value.length < 6) {
+        pwdError.classList.remove('hidden');
+        ok = false;
+      } else {
+        pwdError.classList.add('hidden');
+      }
+
+      if (!ok) return;
+
+      // Simulate a successful login (client-side only)
+      // Replace this with a real API call (fetch/axios) to your backend
+      const payload = {
+        email: email.value.trim(),
+        remember: document.getElementById('remember').checked
+      };
+
+      // For demo: store email in localStorage if remember checked
+      if (payload.remember) {
+        localStorage.setItem('transx_user', payload.email);
+      } else {
+        localStorage.removeItem('transx_user');
+      }
+
+      alert('Signed in as ' + payload.email + ' (client-side demo)');
+      // Optionally redirect: window.location.href = '/dashboard.html';
+    });
+
+    // Prefill from localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('transx_user');
+      if (saved) {
+        email.value = saved;
+        document.getElementById('remember').checked = true;
+      }
+    });
+  </script>
+
+  <!--
+    README / GitHub publish instructions
+
+    1) Save this file as `transx-login.html` locally.
+    2) Create a new GitHub repository (via github.com) or use an existing one.
+    3) From the folder containing the file run:
+       git init
+       git add transx-login.html
+       git commit -m "Add TransX client-side login page"
+       git branch -M main
+       git remote add origin https://github.com/<your-username>/<your-repo>.git
+       git push -u origin main
+
+    4) If you'd like GitHub Pages hosting: enable it in repo Settings -> Pages and point to the main branch.
+
+    Notes:
+    - This is a static, client-side demo. For real authentication wire this to a secure backend.
+    - Replace the placeholder "TX" brand with your SVG/logo and update colors to match your brand.
+  -->
+</body>
+</html>
 
