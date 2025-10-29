@@ -1,27 +1,23 @@
-const greetBtn = document.getElementById('greetBtn');
-const message = document.getElementById('message');
+function login() {
+    let phone = document.getElementById("phone").value;
+    let password = document.getElementById("password").value;
+    let msg = document.getElementById("msg");
 
+    // Demo credentials
+    const correctPhone = "9999999999";
+    const correctPassword = "ola123";
 
-greetBtn.addEventListener('click', () => {
-const now = new Date();
-message.textContent = `Hello! The time is ${now.toLocaleTimeString()}.`;
-});
+    if (phone === correctPhone && password === correctPassword) {
+        msg.style.color = "green";
+        msg.innerHTML = "Login Successful ✅";
 
+        // Redirect to homepage after login
+        setTimeout(() => {
+            window.location.href = "home.html"; // you can create this page later
+        }, 1000);
 
-// Simple contact form handling (no server — demo only)
-const contactForm = document.getElementById('contactForm');
-const formResponse = document.getElementById('formResponse');
-
-
-contactForm.addEventListener('submit', (e) => {
-e.preventDefault();
-const name = document.getElementById('name').value.trim();
-const email = document.getElementById('email').value.trim();
-if(!name || !email){
-formResponse.textContent = 'Please fill in both fields.';
-return;
+    } else {
+        msg.style.color = "red";
+        msg.innerHTML = "Invalid Login ❌";
+    }
 }
-// mimic sending
-formResponse.textContent = `Thanks, ${name}! We received your message (email: ${email}).`;
-contactForm.reset();
-});
