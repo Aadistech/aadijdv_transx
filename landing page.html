@@ -1,157 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TransX - Landing Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TransX - Smart Urban Mobility</title>
 
-    <!-- ✅ Internal CSS: Styling is inside the same file -->
-    <style>
-        /* General Page Styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
+  <style>
+    /* 🎨 General Page Design */
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(180deg, #0f1724 0%, #071028 100%);
+      color: #e6eef8;
+      line-height: 1.6;
+    }
 
-        /* Header Section */
-        header {
-            background-color: #4A90E2;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
+    header {
+      background: rgba(15, 23, 36, 0.9);
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-        /* About Section */
-        #about {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: white;
-        }
+    header h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin: 0;
+    }
 
-        /* Team Section */
-        #team {
-            padding: 40px 20px;
-            background-color: #f0f0f0;
-            text-align: center;
-        }
+    header p {
+      color: #94a3b8;
+      margin-top: 10px;
+    }
 
-        .team-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        /* Each Member Box */
-        .member {
-            background-color: white;
-            border-radius: 10px;
-            width: 200px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-        .member img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+    p {
+      text-align: center;
+      color: #94a3b8;
+    }
 
-        .member h3 {
-            margin: 10px 0 5px;
-        }
+    /* 🚀 Hero Section */
+    #about {
+      text-align: center;
+    }
 
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+    #about p {
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    /* 👥 Team Section */
+    #team {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 15px;
+      padding: 50px 20px;
+    }
+
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .member {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      width: 200px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .member:hover {
+      transform: translateY(-5px);
+    }
+
+    .member img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .member h3 {
+      margin: 10px 0 5px;
+      color: #fff;
+    }
+
+    .member p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* 💰 Pricing Section */
+    #pricing {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 15px;
+      padding: 50px 20px;
+    }
+
+    .pricing-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .price-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .price-card h3 {
+      margin: 0 0 10px;
+      color: #fff;
+    }
+
+    .price {
+      font-size: 1.8rem;
+      color: #06b6d4;
+      margin: 10px 0;
+    }
+
+    .price-card p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #2563eb, #06b6d4);
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* 📞 Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 50px;
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 700px) {
+      .team-container, .pricing-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>🚀 TransX</h1>
-        <p>Your Smart Transport Companion</p>
-    </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Our App</h2>
-        <p>TransX helps users easily manage and track transportation schedules, routes, and costs with a smart and user-friendly interface.</p>
-    </section>
+  <!-- 🌟 Header -->
+  <header>
+    <h1>🚖 TransX</h1>
+    <p>Your Smart Urban Mobility App</p>
+  </header>
 
-    <!-- Team Section -->
-    <section id="team">
-        <h2>Meet Our Team</h2>
-        <div class="team-container">
-            <!-- Member 1 -->
-            <div class="member">
-                <img src="images/member1.jpg" alt="Member 1">
-                <h3>Member Name 1</h3>
-                <p>Role / Description</p>
-            </div>
+  <!-- 🧭 About Section -->
+  <section id="about">
+    <h2>About TransX</h2>
+    <p>TransX is your all-in-one urban transport companion, helping riders and drivers connect seamlessly with real-time tracking, smart payments, and secure rides.</p>
+  </section>
 
-            <!-- Member 2 -->
-            <div class="member">
-                <img src="images/member2.jpg" alt="Member 2">
-                <h3>Member Name 2</h3>
-                <p>Role / Description</p>
-            </div>
+  <!-- 👥 Team Section -->
+  <section id="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-container">
+      <!-- Add your 8 members here -->
+      <div class="member">
+        <img src="images/member1.jpg" alt="Member 1">
+        <h3>Member Name 1</h3>
+        <p>Frontend Developer</p>
+      </div>
 
-            <!-- Member 3 -->
-            <div class="member">
-                <img src="images/member3.jpg" alt="Member 3">
-                <h3>Member Name 3</h3>
-                <p>Role / Description</p>
-            </div>
+      <div class="member">
+        <img src="images/member2.jpg" alt="Member 2">
+        <h3>Member Name 2</h3>
+        <p>Backend Developer</p>
+      </div>
 
-            <!-- Member 4 -->
-            <div class="member">
-                <img src="images/member4.jpg" alt="Member 4">
-                <h3>Member Name 4</h3>
-                <p>Role / Description</p>
-            </div>
+      <div class="member">
+        <img src="images/member3.jpg" alt="Member 3">
+        <h3>Member Name 3</h3>
+        <p>UI/UX Designer</p>
+      </div>
 
-            <!-- Member 5 -->
-            <div class="member">
-                <img src="images/member5.jpg" alt="Member 5">
-                <h3>Member Name 5</h3>
-                <p>Role / Description</p>
-            </div>
+      <div class="member">
+        <img src="images/member4.jpg" alt="Member 4">
+        <h3>Member Name 4</h3>
+        <p>Data Scientist</p>
+      </div>
 
-            <!-- Member 6 -->
-            <div class="member">
-                <img src="images/member6.jpg" alt="Member 6">
-                <h3>Member Name 6</h3>
-                <p>Role / Description</p>
-            </div>
+      <div class="member">
+        <img src="images/member5.jpg" alt="Member 5">
+        <h3>Member Name 5</h3>
+        <p>ML Engineer</p>
+      </div>
 
-            <!-- Member 7 -->
-            <div class="member">
-                <img src="images/member7.jpg" alt="Member 7">
-                <h3>Member Name 7</h3>
-                <p>Role / Description</p>
-            </div>
+      <div class="member">
+        <img src="images/member6.jpg" alt="Member 6">
+        <h3>Member Name 6</h3>
+        <p>DevOps Engineer</p>
+      </div>
 
-            <!-- Member 8 -->
-            <div class="member">
-                <img src="images/member8.jpg" alt="Member 8">
-                <h3>Member Name 8</h3>
-                <p>Role / Description</p>
-            </div>
-        </div>
-    </section>
+      <div class="member">
+        <img src="images/member7.jpg" alt="Member 7">
+        <h3>Member Name 7</h3>
+        <p>Tester</p>
+      </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>© 2025 TransX Team. All Rights Reserved.</p>
-    </footer>
+      <div class="member">
+        <img src="images/member8.jpg" alt="Member 8">
+        <h3>Member Name 8</h3>
+        <p>Project Manager</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💰 Pricing Section -->
+  <section id="pricing">
+    <h2>Pricing & Subscription</h2>
+    <p>Choose a plan that suits your project or startup goals.</p>
+
+    <div class="pricing-container">
+      <div class="price-card">
+        <h3>Community Plan</h3>
+        <div class="price">Free</div>
+        <p>Perfect for students & small projects. Includes templates and docs.</p>
+        <a href="#" class="btn">Start Free</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Team Plan</h3>
+        <div class="price">₹499 / mo</div>
+        <p>Ideal for small dev teams with shared repos & demo hosting.</p>
+        <a href="#" class="btn">Subscribe</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Enterprise</h3>
+        <div class="price">Custom</div>
+        <p>For production-ready deployments with analytics & support.</p>
+        <a href="#" class="btn">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 Footer -->
+  <footer>
+    <p>© 2025 TransX Team — UrbanXplore Project</p>
+  </footer>
+
 </body>
 </html>
+
