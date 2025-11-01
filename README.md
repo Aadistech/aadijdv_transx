@@ -1,6 +1,6 @@
-# Aadijdv TransX — Portfolio & Login Web Project
+# Aadijdv TransX —  Web Project
 
-A simple and clean web-based project that includes a **Portfolio Website** along with a **Client-side Login Page**, designed using **HTML, CSS, and JavaScript**.  
+A simple and clean web-based project that includes a **Website** along with a **Client-side Login Page**,**Transx landing Page**, designed using **HTML, CSS, and JavaScript**.  
 Made as a beginner-friendly learning project to practice front-end development and UI styling.
 
 ---
@@ -8,7 +8,8 @@ Made as a beginner-friendly learning project to practice front-end development a
 ## 🚀 Features
 
 ✅ Modern personal portfolio page  
-✅ Client-side login form (UI only)  
+✅ Client-side login form (UI only) 
+✅ Transx landing Page (UI only) 
 ✅ Separate files for HTML, CSS & JS  
 ✅ Fully responsive layout  
 ✅ Easy to customize and expand
@@ -27,6 +28,7 @@ Made as a beginner-friendly learning project to practice front-end development a
 
 | Page | Description |
 |------|-------------|
+| `landing page.html` | Showcases bio, skills, projects and contact section |
 | `portfolio.html` | Showcases bio, skills, projects and contact section |
 | `login.html` | User login UI for demonstration |
 | `style.css` | Styling for pages |
@@ -57,7 +59,7 @@ Along with tech, I enjoy **cricket, carrom, and football**.
 
 Feel free to connect or share feedback!
 
-- ✉️ Email: `youremail@example.com`  
+- ✉️ Email: `aaditya2508.jadhav25@gmail.com`  
 - 🌐 Portfolio: *(Coming soon)*  
 - 🐙 GitHub: https://github.com/Aadistech  
 
