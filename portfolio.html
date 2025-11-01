@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AADITYA JADHAV — Portfolio</title>
+  <meta name="description" content="Portfolio of AADITYA JADHAV — Data science / DATA SCIENCE STUDENT FROM BSC CS" />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7c3aed;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial;color:#e6eef6;background:linear-gradient(180deg,#071029 0%, #0b1120 100%);-webkit-font-smoothing:antialiased}
+    .container{max-width:1000px;margin:32px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    nav a:hover{color:white}
+    .hero{display:flex;gap:28px;align-items:center;margin-top:28px}
+    .intro{flex:1}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin-top:8px}
+    .cta{margin-top:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:600}
+    .secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px;border-radius:10px}
+
+    /* cards */
+    section{margin-top:28px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+
+    /* skills */
+    .skills{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .skill{background:var(--glass);padding:8px 10px;border-radius:999px;color:var(--muted);font-weight:600}
+
+    /* projects grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:12px}
+    .proj{padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03)}
+    .proj h3{margin:0 0 8px 0}
+    .proj p{color:var(--muted);font-size:14px}
+    .proj .links{margin-top:12px;display:flex;gap:8px}
+    .small{font-size:13px;padding:8px 10px;border-radius:8px;text-decoration:none}
+    .gh{background:rgba(255,255,255,0.03);color:var(--muted)}
+    .live{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white}
+
+    /* contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 280px;gap:14px}
+    .contact-card{display:flex;flex-direction:column;gap:10px}
+    .socials a{display:inline-block;margin-right:10px;color:var(--muted);text-decoration:none}
+
+    footer{margin-top:28px;color:var(--muted);font-size:14px;text-align:center}
+
+    /* responsive */
+    @media (max-width:740px){.contact-grid{grid-template-columns:1fr}.hero{flex-direction:column;align-items:flex-start}.logo{width:48px;height:48px}}
+
+    /* small animations */
+    .fade-up{opacity:0;transform:translateY(8px);animation:fadeUp 600ms ease forwards}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+
+    /* nav mobile */
+    .hamburger{display:none;cursor:pointer}
+    @media (max-width:720px){nav{display:none}.hamburger{display:block}}
+
+    /* theme toggle */
+    .theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:8px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">AJ</div>
+        <div>
+          <div style="font-weight:700">AADITYA JADHAV</div>
+          <div style="font-size:12px;color:var(--muted)">BSc CS — Interested in Data Science</div>
+        </div>
+      </div>
+
+      <div>
+        <nav id="main-nav">
+          <a href="https://www.linkedin.com/in/aaditya-jadhav-6a0573329">About</a>
+          <a href="https://github.com/Aadistech/aadijdv_transx>Projects">Projects</a>
+          <a href="https://www.linkedin.com/in/aaditya-jadhav-6a0573329">Contact</a>
+        </nav>
+        <button class="hamburger" onclick="toggleNav()">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero card fade-up">
+        <div class="intro">
+          <h1>Hi, I'm Aaditya Jadhav — a BSc CS student who loves data science.</h1>
+          <p class="lead">I build small web apps and data projects. I enjoy cricket, carrom, and football. This portfolio shows my work, GitHub, and contact links.</p>
+          <div class="cta">
+            <a class="btn" href="https://github.com/Aadistech/aadijdv_transx"target="_blank">View GitHub</a>
+            <a class="secondary" href="https://github.com/Aadistech/aadijdv_transx">See projects</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="card fade-up">
+        <h2>About</h2>
+        <p style="color:var(--muted)">Brief: I'm a 2nd year BSc CS student learning data analysis, machine learning, Python, and web development. I enjoy building small projects that solve real problems.</p>
+        <div class="skills" aria-hidden="true">
+          <span class="skill">Python</span>
+          <span class="skill">Pandas</span>
+          <span class="skill">Scikit-learn</span>
+          <span class="skill">HTML/CSS/JS</span>
+          <span class="skill">Streamlit</span>
+        </div>
+      </section>
+
+      <section id="projects" class="card fade-up">
+        <h2>Projects</h2>
+        <p style="color:var(--muted);margin-top:6px">A few highlights — replace these with your projects. Keep 2–6 featured projects here.</p>
+
+        <div style="margin-top:12px">
+          <div style="margin-bottom:10px">
+            <label for="filter">Filter:</label>
+            <select id="filter" onchange="filterProjects()">
+              <option value="all">All</option>
+              <option value="web">Web</option>
+              <option value="ds">Data Science</option>
+            </select>
+          </div>
+
+          <div class="grid" id="projects-grid">
+            <!-- Project card example: update content and links -->
+            <article class="proj" data-type="ds">
+              <h3>Student Performance Predictor</h3>
+              <p>Predicts student scores using a dataset, features, and scikit-learn models. Includes Streamlit dashboard.</p>
+              <div class="links">
+                <a class="small gh" href="https://github.com/Aadistech/aadijdv_transx" target="_blank">GitHub</a>
+                <a class="small live" href="#" target="_blank">Live Demo</a>
+              </div>
+            </article>
+
+            <article class="proj" data-type="web">
+              <h3>Smart Grocery List Manager</h3>
+              <p>Python + SQLite + Streamlit app to track groceries, suggestions, and low-stock alerts.</p>
+              <div class="links">
+                <a class="small gh" href="https://github.com/Aadistech/aadijdv_demo" target="_blank">GitHub</a>
+                <a class="small live" href="#" target="_blank">Video</a>
+              </div>
+            </article>
+
+            <!-- add more project cards here -->
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="card fade-up">
+        <h2>Contact & Links</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <p style="color:var(--muted)">Want to work together or see my code? Reach out.</p>
+            <div class="socials">
+              <a href="https://www.linkedin.com/in/aaditya-jadhav-6a0573329/" target="_blank">LinkedIn</a>
+              <a href="https://github.com/" target="_blank">GitHub</a>
+              <a href="aaditya2508.jadhav25@gmail.com">Email</a>
+            </div>
+            <div style="margin-top:8px">
+              <a class="small live" href="/resume.pdf" download>Download Resume</a>
+            </div>
+          </div>
+
+          <div class="card" style="align-self:start">
+            <h3>Quick message</h3>
+            <form onsubmit="sendMail(event)">
+              <input id="name" placeholder="Your name" required style="width:100%;padding:8px;margin-bottom:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:white" />
+              <input id="email" placeholder="Your email" required style="width:100%;padding:8px;margin-bottom:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:white" />
+              <textarea id="message" placeholder="Message" required style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:white"></textarea>
+              <div style="margin-top:8px"><button class="btn" type="submit">Send</button></div>
+            </form>
+            <p style="color:var(--muted);font-size:13px;margin-top:8px">(This uses a mailto: fallback — replace with a server or form service to receive messages.)</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        Made by — AADITYA JADHAV • <span id="2025"></span>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleNav(){
+      const nav = document.getElementById('main-nav');
+      if(nav.style.display === 'block') nav.style.display = '';
+      else nav.style.display = 'block';
+    }
+
+    // simple project filter
+    function filterProjects(){
+      const val = document.getElementById('filter').value;
+      const cards = document.querySelectorAll('.proj');
+      cards.forEach(c => {
+        if(val === 'all' || c.dataset.type === val) c.style.display = '';
+        else c.style.display = 'none';
+      })
+    }
+
+    // mail fallback: opens default email client with prefilled content
+    function sendMail(e){
+      e.preventDefault();
+      const n = document.getElementById('name').value;
+      const em = document.getElementById('email').value;
+      const msg = document.getElementById('message').value;
+      const subject = encodeURIComponent('Portfolio message from ' + n);
+      const body = encodeURIComponent('Name: ' + n + '\nEmail: ' + em + '\n\n' + msg);
+      window.location.href = 'mailto:your.email@example.com?subject=' + subject + '&body=' + body;
+    }
+
+    // small fade-in effect for elements with .fade-up
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('.fade-up').forEach((el,i)=>{el.style.animationDelay = (i*120)+'ms'});
+    })
+  </script>
+</body>
+</html>
