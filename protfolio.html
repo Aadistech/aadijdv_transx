@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aditya J. — Portfolio</title>
+  <meta name="description" content="Simple, modern portfolio — projects, skills, and contact." />
+
+  <!-- Simple embedded stylesheet -->
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      --maxw:1100px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0; background:linear-gradient(180deg,var(--bg),#071021); color:#e6eef8; -webkit-font-smoothing:antialiased;
+      line-height:1.45; padding:32px 16px; display:flex; justify-content:center;
+    }
+    .wrap{width:100%; max-width:var(--maxw);} 
+
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:28px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+    .logo svg{width:28px;height:28px;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.35))}
+    h1{font-size:20px;margin:0}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+    nav a:hover{color:#fff}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start;margin-bottom:28px}
+    .card{background:var(--card); padding:20px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+
+    .intro h2{margin:0 0 8px 0;font-size:28px}
+    .intro p{color:var(--muted);margin:0 0 16px}
+
+    .cta{display:flex;gap:10px}
+    .btn{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:white;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+    .profile{display:flex;flex-direction:column;gap:12px;align-items:center}
+    .avatar{width:100%;border-radius:12px;overflow:hidden}
+    .avatar img{display:block;width:100%;height:auto}
+    .stats{display:flex;gap:12px;width:100%;justify-content:space-between}
+    .stat{background:var(--glass);padding:8px;border-radius:10px;text-align:center;flex:1}
+    .stat b{display:block;font-size:18px}
+
+    section{margin-bottom:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
+    .project h3{margin:0 0 6px 0}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+    .tag{font-size:12px;padding:6px 8px;background:rgba(255,255,255,0.03);border-radius:8px;color:var(--muted)}
+
+    .skills{display:flex;gap:10px;flex-wrap:wrap}
+    .skill{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px}
+
+    form.contact{display:grid;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
+    textarea{min-height:120px}
+    .footer{color:var(--muted);font-size:14px;padding:14px 0;text-align:center}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:1fr}
+    }
+
+    /* small niceties */
+    a.small-link{color:var(--muted);font-size:13px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>
+          <!-- minimal initials logo -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="22" height="22" rx="5" fill="white" fill-opacity="0.08"/><path d="M7 17V7h3l4 5v5" stroke="white" stroke-opacity="0.95" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h1>Aditya Jadhav</h1>
+          <div style="font-size:13px;color:var(--muted)">Web • Data • Projects</div>
+        </div>
+      </div>
+      <nav>
+        <a href=https://www.linkedin.com/in/aaditya-jadhav-6a0573329>About me</a>
+        <a href=https://github.com/Aadistech/aadijdv_transx>Projects</a>
+        
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card intro">
+        <h2>Hi — I'm Aditya, a CS student and budding data analyst.</h2>
+        <p>I build web apps, analyze data, and make clean visual dashboards. This is a simple single-file portfolio you can edit and host anywhere.</p>
+        <div class="cta">
+          <button class="btn" onclick="scrollToSection('projects')">View projects</button>
+          <button class="btn secondary" onclick="scrollToSection('contact')">Hire me</button>
+        </div>
+
+        <hr style="margin:16px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
+
+        <section id="about">
+          <h3 style="margin-bottom:8px">About me</h3>
+          <p style="color:var(--muted)">Final-year BSc CS student. Interests: predictive analytics, web development with Python/JS, and building data-driven dashboards. Currently learning advanced machine learning and building a Transx app.</p>
+
+          <div style="margin-top:12px">
+            <div class="pill">📍 India</div>
+            <div style="height:8px"></div>
+            <div class="skills" aria-label="skills">
+              <div class="skill">Python</div>
+              <div class="skill">Pandas</div>
+              <div class="skill">Scikit-learn</div>
+              <div class="skill">HTML/CSS/JS</div>
+              <div class="skill">Streamlit</div>
+              <div class="skill">SQL</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="card profile">
+        <div class="avatar">
+          <!-- placeholder avatar (SVG) -->
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><rect width='100%' height='100%' fill='%230b1220'/><g fill='%23ffffff' fill-opacity='0.06'><circle cx='120' cy='120' r='100'/><rect x='200' y='50' width='320' height='220' rx='18'/></g><text x='50%' y='92%' font-size='24' fill='%23aab8cc' text-anchor='middle'>Your Photo</text></svg>" alt="avatar placeholder" />
+        </div>
+        <div style="width:100%">
+          <div style="font-weight:600">Open to internships</div>
+          <div style="color:var(--muted);font-size:13px;margin-top:6px">Available for remote or hybrid roles — willing to learn and contribute.</div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b>8</b><small style="color:var(--muted)">Projects</small></div>
+          <div class="stat"><b>2</b><small style="color:var(--muted)">Internships</small></div>
+          <div class="stat"><b>1k+</b><small style="color:var(--muted)">Lines of code</small></div>
+        </div>
+
+        <div style="width:100%;display:flex;gap:10px;margin-top:8px">
+          <a class="small-link" href="#projects">Projects</a>
+          <a class="small-link" href="#contact">Contact</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" class="card">
+      <h3 style="margin-top:0">Selected projects</h3>
+      <div class="projects">
+        <article class="project">
+          <h3>Student Performance Predictor</h3>
+          <div style="color:var(--muted);font-size:13px">Python, Scikit-learn, Streamlit — predicts student grades from behaviour & demography.</div>
+          <div class="tags"><span class="tag">ML</span><span class="tag">Streamlit</span><span class="tag">Python</span></div>
+        </article>
+        <article class="project">
+          <h3>Smart Grocery List</h3>
+          <div style="color:var(--muted);font-size:13px">A grocery manager that suggests items based on history — Python + SQLite + Streamlit.</div>
+          <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span></div>
+        </article>
+        <article class="project">
+          <h3>Portfolio Website</h3>
+          <div style="color:var(--muted);font-size:13px">This very page — responsive, single-file, easy to edit.</div>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h3 style="margin-top:0">Contact</h3>
+      <form class="contact" onsubmit="return handleContact(event)">
+        <input id="name" placeholder="Your name" required />
+        <input id="email" type="email" placeholder="Email" required />
+        <textarea id="message" placeholder="Brief message..." required></textarea>
+        <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+          <div style="color:var(--muted);font-size:13px">Or email: <span style="color:#fff">youremail@example.com</span></div>
+          <button class="btn" type="submit">Send</button>
+        </div>
+        <div id="formMsg" style="color:var(--muted);font-size:13px;margin-top:8px"></div>
+      </form>
+    </section>
+
+    <div class="footer">Made with ❤️ • Customize this file and replace placeholders with your content.</div>
+  </main>
+
+  <!-- Small client-side script (JS) -->
+  <script>
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function handleContact(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const message=document.getElementById('message').value.trim();
+      const msgEl=document.getElementById('formMsg');
+      if(!name||!email||!message){ msgEl.textContent='Please fill all fields.'; return false }
+
+      // Fake submit (client-only). Replace with an API call or form endpoint when ready.
+      msgEl.textContent='Thanks '+name+' — message received (client-side demo).';
+      setTimeout(()=>{ document.getElementById('formMsg').textContent=''; }, 5000);
+      document.querySelector('.contact').reset();
+      return false;
+    }
+  </script>
+</body>
+</html>

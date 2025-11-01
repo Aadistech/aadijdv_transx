@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)file:///E:/transx%20git2025/aadijdv_transx/landingpage.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TransX - Smart Urban Mobility</title>
+
+  <style>
+    /* 🎨 General Page Design */
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(180deg, #0f1724 0%, #071028 100%);
+      color: #e6eef8;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* 🌟 Header Section */
+    header {
+      background: rgba(15, 23, 36, 0.9);
+      text-align: center;
+      padding: 60px 20px 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 130px;
+      display: block;
+      margin: 0 auto 15px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(6, 182, 212, 0.3);
+      transition: transform 0.4s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05) rotate(3deg);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #fff;
+      margin: 0;
+      text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+    }
+
+    /* 🌈 Highlighted "X" */
+    .x-highlight {
+      color: #00C3FF; /* Your logo color */
+      text-shadow: 0 0 8px #00C3FF, 0 0 15px #00C3FF;
+      font-weight: 700;
+    }
+
+    header p {
+      color: #94a3b8;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* 🌍 Section Style */
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #06b6d4;
+      text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+    }
+
+    p {
+      text-align: center;
+      color: #94a3b8;
+    }
+
+    /* 🧭 About Section */
+    #about p {
+      max-width: 750px;
+      margin: 20px auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* 👥 Team Section */
+    #team {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 15px;
+      padding: 60px 20px;
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    #team:hover {
+      box-shadow: 0 0 40px rgba(6, 182, 212, 0.2);
+    }
+
+    .team-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 30px;
+      padding: 15px;
+      scroll-behavior: smooth;
+    }
+
+    .team-container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .team-container::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #2563eb, #06b6d4);
+      border-radius: 10px;
+    }
+
+    .member {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      flex: 0 0 200px;
+      text-align: center;
+      padding: 25px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: popIn 0.8s ease;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(6, 182, 212, 0.3);
+    }
+
+    .member img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      object-position: center 10%; /* show more hair */
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      display: block;
+      border: 3px solid #06b6d4;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .member img:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    }
+
+    .member h3 {
+      margin: 8px 0 4px;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .member p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* 📞 Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 60px;
+      font-size: 0.95rem;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    footer a {
+      color: #06b6d4;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #38bdf8;
+      text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 700px) {
+      .team-container {
+        gap: 20px;
+      }
+      .member {
+        flex: 0 0 170px;
+      }
+      .member img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+
+  <!-- 🌟 Header -->
+  <header>
+    <img src="./TransX - Smart Urban Mobility landing page_files/transx logo.jpg" alt="TransX Logo" class="logo">
+    <h1> By Urban<span class="x-highlight">X</span>plore</h1>
+    <p>Your Smart Urban Rural Mobility App</p>
+  </header>
+
+  <!-- 🧭 About Section -->
+  <section id="about">
+    <h2>About TransX</h2>
+    <p>
+      TransX is your all-in-one  urban rural transportation partner — helping riders and drivers connect seamlessly with 
+      real-time tracking, smart payments, and secure rides. Our mission is to make every ride efficient, safe, and eco-friendly.
+    </p>
+  </section>
+
+  <!-- 👥 Team Section -->
+  <section id="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-container">
+      <div class="member">
+        <img src="./TransX - Smart Urban Mobility landing page_files/Padmaj.jpg" alt="Member 1">
+        <h3>Padmaj Jadhav</h3>
+        <h3>CEO</h3>
+        <p>App Developer</p>
+      </div>
+
+      <div class="member">
+        <img src="./TransX - Smart Urban Mobility landing page_files/Aaditya.jpg" alt="Member 2">
+        <h3>Aaditya Jadhav</h3>
+        <h3>Co-Founder</h3>
+        <p>Data Management</p>
+      </div>
+
+      <div class="member">
+        <img src="./TransX - Smart Urban Mobility landing page_files/Parth.jpg" alt="Member 3">
+        <h3>Parth Kadam</h3>
+        <h3>Co-Founder</h3>
+        <p>Backend Developer</p>
+      </div>
+
+      <div class="member">
+        <img src="./TransX - Smart Urban Mobility landing page_files/Anushka .jpg" alt="Member 4">
+        <h3>Anushka Jadhav</h3>
+        <p>Backend Developer</p>
+      </div>
+
+      <div class="member">
+        <img src="./TransX - Smart Urban Mobility landing page_files/Sanjeevani.jpg" alt="Member 5">
+        <h3>Sanjeevani Babar</h3>
+        <p>Frontend Developer</p>
+      </div>
+
+      <div class="member">
+        <img src="./TransX - Smart Urban Mobility landing page_files/Siddhi.jpg" alt="Member 6">
+        <h3>Siddhi Gaikar</h3>
+        <p>Frontend Developer</p>
+      </div>
+
+      <div class="member">
+        <img src="./TransX - Smart Urban Mobility landing page_files/Dhanashri.jpg" alt="Member 7">
+        <h3>Dhanashri Gharat</h3>
+        <p>Social Media Manager</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 Footer -->
+  <footer>
+    <p>© 2025 TransX Team — UrbanXplore Project</p>
+    <p>Connect with us:
+      <a href="https://discord.gg/d8uJz6Pm">Discord</a> |
+      <a href="https://github.com/Aadistech/aadijdv_transx">GitHub</a>
+    </p>
+  </footer>
+
+
+
+</body></html>
